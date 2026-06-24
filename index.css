@@ -137,6 +137,7 @@ a {
   gap: 40px;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   .button {
 
     .arrow {
