@@ -1,0 +1,239 @@
+body {
+  font-family: "main";
+  font-size: 40px;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 255, 64);
+}
+
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  .glich {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    filter: blur(10px);
+  }
+  .bg-fix {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 255, 21);
+    mix-blend-mode: color-burn;
+  }
+  .podval-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    mix-blend-mode: color-dodge;
+    justify-content: flex-end;
+    img {
+      height: 1200px;
+      width: 1200px;
+    }
+  }
+  z-index: -30;
+  opacity: 0.1;
+}
+
+@keyframes arrow-animation {
+  0% {
+  }
+  50% {
+    transform: translateY(-5px) scale(0.5);
+  }
+  100% {
+    transform: translateY(5px) scale(1);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transform: translateX(var(--move-x)) translateY(var(--move-y));
+  transition: 0.1s ease;
+}
+
+.main-text {
+  width: 400px;
+  align-self: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.main-glow {
+  width: 180px;
+  height: 300px;
+  background-color: rgb(0, 255, 64);
+  align-self: center;
+  position: absolute;
+  top: -150px;
+  filter: blur(400px);
+
+}
+
+.end-text {
+  text-align: center;
+  align-self: center;
+  font-size: 15px;
+  opacity: 0.3;
+  position: relative;
+  top: -150px;
+}
+
+.online-check {
+  display: flex;
+  gap: 10px;
+  align-self: center;
+  border-radius: 5px;
+  height: 25px;
+  background-color: rgb(0, 255, 64);
+  padding: 5px;
+  .check {
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 5px;
+    animation-name: checkbox-animation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+  }
+  .text-check {
+    color: black;
+    font-size: 18px;
+  }
+} 
+
+@keyframes checkbox-animation {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  
+}
+
+.buttons {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  .button {
+
+    .arrow {
+      position: relative;
+      top: -238px;
+      left: 125px;
+      width: 30px;
+      margin-bottom: 25px;
+      align-self: center;
+      justify-content: center;
+      opacity: 0;
+
+      animation-name: arrow-animation;
+      animation-duration: .8s;
+      animation-iteration-count: infinite;
+      animation-delay: .1s;
+
+
+    }
+
+
+
+
+    .button-text {
+      position: relative;
+      display: FLEX;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(0, 255, 64);
+      width: 280px;
+      height: 60px;
+      gap: 5px;
+      a {
+        position: relative;
+        font-size: 24px;
+        height: 30px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        width: 100%;
+        text-align: center;
+      }
+      transition: all .2s ease;
+    }
+    .button-text:hover {
+      transition: all .3s ease;
+      background-color: rgb(29, 255, 85);
+      transform: scale(1.1) translateY(-12px);
+    }
+    .button-text:hover ~ .glow {
+      transition: all .3s ease;
+        opacity: 0.5
+    }
+    .button-text:hover ~ .arrow {
+      transition: all .3s ease;
+      opacity: 1
+    }
+    .special-button {
+      a {
+        background-color: black;
+        color: rgb(0, 255, 64);
+        border: 1px rgb(0, 255, 64) solid;
+      }
+    }
+
+
+
+
+    .button-drop {
+      z-index: -20;
+      position: relative;
+      top: -60px;
+      width: 280px;
+      height: 60px;
+      border: 1px dotted rgb(0, 255, 64);
+      box-sizing: border-box;
+      border-radius: 5px;
+      
+    }
+
+    
+
+    .glow {
+      width: 160px;
+      height: 60px;
+      background-color: rgba(0, 255, 64, 0.527);
+      align-self: center;
+      justify-self: center;
+      position: relative;
+      top: -130px;
+      z-index: 20;
+      filter: blur(70px);
+      opacity: 0;
+      mix-blend-mode: lighten;
+      pointer-events: none;
+    }
+
+
+
+  }
+}

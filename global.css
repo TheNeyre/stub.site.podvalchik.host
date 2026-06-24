@@ -1,0 +1,21 @@
+* {
+  cursor:crosshair;
+}
+
+
+@font-face {
+  font-family: "main";
+  src: url("./fonts/buse.otf");
+}
+
+::selection {
+    background: rgb(0, 255, 64);
+    color: black;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: rgb(0, 255, 64);
+    color: #EEE;
+    text-shadow: none;
+}
